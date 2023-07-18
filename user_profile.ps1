@@ -2,7 +2,7 @@
 [console]::InputEncoding = [console]::OutputEncoding = New-Object System.Text.UTF8Encoding
 
 Import-Module posh-git
-Import-Module oh-my-posh
+Import-Module "C:\Users\kingl\OneDrive\Tài liệu\PowerShell\Modules\posh-git\1.1.0\posh-git.psd1"
 function Get-ScriptDirectory { Split-Path $MyInvocation.ScriptName }
 $omp_config = Join-Path (Get-ScriptDirectory) 'takuya.omp.json'
 oh-my-posh init pwsh --config $omp_config | Invoke-Expression
@@ -33,6 +33,6 @@ Set-Alias less 'C:\Program Files\Git\usr\bin\less.exe'
 
 # Utilities
 function which ($command) {
-  Get-Command -Name $command -ErrorAction SilentlyContinue |
-    Select-Object -ExpandProperty Path -ErrorAction SilentlyContinue
+	Get-Command -Name $command -ErrorAction SilentlyContinue |
+	Select-Object -ExpandProperty Path -ErrorAction SilentlyContinue
 }
